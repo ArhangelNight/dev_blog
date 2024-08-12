@@ -30,13 +30,31 @@
                     <div class="col-12">
                         <h6 class="mb-3">
                         </h6>
-                        <form action="{{route('admin.category.update', $category->id)}}" method="POST" class="w-25">
+                        <form action="{{route('admin.category.update', $category->id)}}" method="POST" enctype="multipart/form-data" class="w-25">
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
                                 <input type="text" class="form-control" name="title" placeholder="Name category" value="{{$category->title}}">
                                 @error('title')
                                     <div class="text-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group w-50">
+                                <label for="exampleInputFile">Add image</label>
+                                <div class="w-50 mb-2">
+                                    <img src="{{asset('storage/' . $category->image)}}" alt="image" class="w-50">
+                                </div>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="image">
+                                        <label class="custom-file-label">Choose file</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                </div>
+                                @error('image')
+                                <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
                             <input type="submit" class="btn btn-primary" value="Update">

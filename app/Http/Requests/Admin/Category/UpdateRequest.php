@@ -24,7 +24,17 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string'
+            'title' => 'required|string',
+            'image' => 'required|file',
         ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Это поле необходимо заполнить',
+            'image.file' => 'Необходимо выбрать фото категории',
+        ];
+
     }
 }
