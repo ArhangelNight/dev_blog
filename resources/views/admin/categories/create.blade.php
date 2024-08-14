@@ -30,9 +30,9 @@
                     <div class="col-12">
                         <h6 class="mb-3">
                         </h6>
-                        <form action="{{route('admin.category.store')}}" method="POST" enctype="multipart/form-data" class="w-25">
+                        <form action="{{route('admin.category.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group">
+                            <div class="form-group w-25">
                                 <input type="text" class="form-control" name="title" placeholder="Name category">
                                 @error('title')
                                     <div class="text-danger">{{$message}}</div>

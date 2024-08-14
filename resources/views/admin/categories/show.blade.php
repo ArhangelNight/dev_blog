@@ -36,7 +36,7 @@
                 <!-- Small boxes (Stat box) -->
 
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-12">
 
                         <div class="card">
 
@@ -48,10 +48,12 @@
                                         <tr>
                                             <td>ID</td>
                                             <td>Name</td>
+                                            <td>Image</td>
                                         </tr>
                                         <tr>
                                             <td>{{$category->id}}</td>
                                             <td>{{$category->title}}</td>
+                                            <td><img src="{{asset('storage/' . $category->image)}}" width="80" height="60></td>
                                         </tr>
 
                                     </tbody>

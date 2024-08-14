@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-12">
 
                         <div class="card">
                             <div class="card-header">
@@ -56,6 +56,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
+                                        <th>Image</th>
                                         <th colspan="3" class="text-center">Action</th>
                                     </tr>
                                     </thead>
@@ -64,6 +65,7 @@
                                         <tr>
                                             <td>{{$category->id}}</td>
                                             <td>{{$category->title}}</td>
+                                            <td><img src="{{asset('storage/' . $category->image)}}" alt="blog post" width="80" height="60"></td>
                                             <td class="text-center"><a href="{{route('admin.category.show', $category->id)}}"><i class="far fa-eye"></i></a></td>
                                             <td class="text-center"><a href="{{route('admin.category.edit', $category->id)}}" class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
                                             <td class="text-center">

@@ -30,7 +30,7 @@
                     <div class="col-12">
                         <h6 class="mb-3">
                         </h6>
-                        <form action="{{route('admin.category.update', $category->id)}}" method="POST" enctype="multipart/form-data" class="w-25">
+                        <form action="{{route('admin.category.update', $category->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                             <div class="form-group">

@@ -36,7 +36,7 @@
                 <!-- Small boxes (Stat box) -->
 
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-12">
 
                         <div class="card">
 
@@ -48,10 +48,12 @@
                                         <tr>
                                             <td>ID</td>
                                             <td>Name</td>
+                                            <td>Image</td>
                                         </tr>
                                         <tr>
                                             <td>{{$post->id}}</td>
                                             <td>{{$post->title}}</td>
+                                            <td><img src="{{asset('storage/' . $post->preview_image)}}" alt="blog post" width="80" height="60></td>
                                         </tr>
 
                                     </tbody>
