@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <script src="{{asset('assets/vendors/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/loader.js')}}"></script>
+    <style>
+        .round {
+            border-radius: 100px; /* Радиус скругления */
+            border: 3px solid green; /* Параметры рамки */
+            box-shadow: 0 0 7px #666; /* Параметры тени */
+        }
+    </style>
 </head>
 <body>
 <div class="edica-loader"></div>
@@ -38,6 +45,13 @@
                         @guest()
                             <a class="nav-link" href="{{route('personal.main.index')}}">Sign in</a>
                         @endguest
+                    </li>
+                    <li class="nav-item">
+                        @auth()
+                            @if(auth()->user()->role == 0)
+                                <a class="nav-link" href="{{route('admin.main.index')}}">Admin dashboard</a>
+                            @endif
+                        @endauth
                     </li>
                 </ul>
 
